@@ -1,0 +1,34 @@
+<h1 style="text-align: center;color: red">List student</h1>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id </th>
+    <th scope="col">Name</th>
+    <th scope="col">Address</th>
+    <th scope="col">Age</th>
+    <th scope="col">Mark</th>
+    <th scope="col">Image</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <th scope="row">{{student.id}}</th>
+    <td>{{student.name}}</td>
+    <td>{{student.address}}</td>
+    <td>{{student.age}}</td>
+    <td>{{student.mark}}
+      <input type="number" (change)="setMark($event.target.value)" min="0" max="10"></td>
+    <td><img style="width: 50px;height: 50px" [src]="student.image"></td>
+  </tr>
+  </tbody>
+</table>
+
+
+
+<!--<h3>Id :{{student.id}}</h3>-->
+<!--<h3>Name : {{student.name}}</h3>-->
+<!--<h3>Address : {{student.address}}</h3>-->
+<!--<h3>Age : {{student.age}}</h3>-->
+<!--<h3>Mark : {{student.mark}}</h3>-->
+<!--<input type="number" (change)="setMark($event.target.value)" min="0" max="10">-->
+<!--<h3>Image : <img [src]="student.image"></h3>-->
