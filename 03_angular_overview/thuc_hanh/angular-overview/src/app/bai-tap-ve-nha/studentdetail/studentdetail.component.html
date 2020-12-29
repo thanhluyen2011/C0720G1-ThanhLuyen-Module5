@@ -1,0 +1,48 @@
+<div *ngIf="studentDetail">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">Id </th>
+      <th scope="col">Name</th>
+      <th scope="col">Address</th>
+      <th scope="col">Age</th>
+      <th scope="col">Mark</th>
+      <th scope="col">Image</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+      <th scope="row">{{studentDetail.id}}</th>
+      <td>{{studentDetail.name}}</td>
+      <td>{{studentDetail.address}}</td>
+      <td>{{studentDetail.age}}</td>
+      <td>{{studentDetail.mark}}
+        <input type="number" (change)="setMark($event.target.value)" min="0" max="10"></td>
+      <td><img  data-toggle="modal" data-target="#modalImage" style="width: 50px;height: 50px" [src]="studentDetail.image"></td>
+      <td></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+<div class="modal fade bd-example-modal-lg" id="modalImage" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+  <div class="modal-dialog modal-lg " role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Image</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body text-dark">
+        <img src="{{studentDetail.image}}" style="height: 450px;width: 450px">
+        <h1 style="color: red">Gái xinh chỉ được nhìn,đụng vô là vỡ alo đấy!!!</h1>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!--        <button type="button" class="btn btn-primary">Save</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+

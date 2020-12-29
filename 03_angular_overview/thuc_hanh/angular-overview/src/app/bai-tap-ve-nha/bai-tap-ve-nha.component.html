@@ -1,34 +1,52 @@
-<h1 style="text-align: center;color: red">List student</h1>
-<table class="table">
+<h1 style="color: red;text-align: center">List Student</h1>
+<table class="table table-hover table-striped text-warning"  >
   <thead>
   <tr>
-    <th scope="col">Id </th>
-    <th scope="col">Name</th>
-    <th scope="col">Address</th>
-    <th scope="col">Age</th>
-    <th scope="col">Mark</th>
-    <th scope="col">Image</th>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Color</th>
+    <th>Action</th>
   </tr>
   </thead>
   <tbody>
-  <tr>
-    <th scope="row">{{student.id}}</th>
+  <tr *ngFor="let student of  studentList">
+    <td>{{student.id}}</td>
     <td>{{student.name}}</td>
     <td>{{student.address}}</td>
-    <td>{{student.age}}</td>
-    <td>{{student.mark}}
-      <input type="number" (change)="setMark($event.target.value)" min="0" max="10"></td>
-    <td><img style="width: 50px;height: 50px" [src]="student.image"></td>
+    <td>
+      <div *ngIf="student.mark > 5,else elseBlock" [style.color]="'blu'">Pass</div>
+      <ng-template #elseBlock>
+        <div *ngIf="this.student.mark == 5,else else1" [style.color]="'green'">Normal</div>
+        <ng-template #else1><span [style.color]="'red'">Fail</span></ng-template>
+      </ng-template>
+    </td>
+    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="getStudent(student)">Detail</button></td>
   </tr>
   </tbody>
 </table>
 
+<!-- Modal -->
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Detail</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-studentdetail [studentDetail]="student"></app-studentdetail>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+<!--        <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
 
 
-<!--<h3>Id :{{student.id}}</h3>-->
-<!--<h3>Name : {{student.name}}</h3>-->
-<!--<h3>Address : {{student.address}}</h3>-->
-<!--<h3>Age : {{student.age}}</h3>-->
-<!--<h3>Mark : {{student.mark}}</h3>-->
-<!--<input type="number" (change)="setMark($event.target.value)" min="0" max="10">-->
-<!--<h3>Image : <img [src]="student.image"></h3>-->
+
+

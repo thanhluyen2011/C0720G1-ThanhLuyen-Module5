@@ -9,6 +9,11 @@ import { BaiTapVeNhaComponent } from './bai-tap-ve-nha/bai-tap-ve-nha.component'
 import { CaculatorComponent } from './03_angular_overview/bai_tap/caculator/caculator.component';
 import {FormsModule} from "@angular/forms";
 import { ColorComponent } from './03_angular_overview/bai_tap/color/color.component';
+import { HackernewsComponent } from './04_angular_component_and_template/thuc_hanh/hackernews/hackernews.component';
+import { StudentdetailComponent } from './bai-tap-ve-nha/studentdetail/studentdetail.component';
+import { HackerNewsComponent } from './04_angular_component_and_template/bai_tap/hacker-news/hacker-news.component';
+import { NameCardComponent } from './05_component_interaction/thuc_hanh/name-card/name-card.component';
+import { ProgressBarComponent } from './05_component_interaction/thuc_hanh/progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +22,12 @@ import { ColorComponent } from './03_angular_overview/bai_tap/color/color.compon
     PetComponent,
     BaiTapVeNhaComponent,
     CaculatorComponent,
-    ColorComponent
+    ColorComponent,
+    HackernewsComponent,
+    StudentdetailComponent,
+    HackerNewsComponent,
+    NameCardComponent,
+    ProgressBarComponent
   ],
   imports: [
     BrowserModule,
