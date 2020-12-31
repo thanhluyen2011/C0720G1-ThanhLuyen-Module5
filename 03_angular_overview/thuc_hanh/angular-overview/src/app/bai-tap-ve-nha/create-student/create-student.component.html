@@ -1,0 +1,27 @@
+<h1 style="color: #0c3f9c;text-align: center">Add new Student</h1>
+<form [formGroup]="studentCreate" (ngSubmit)="saveStudent()" >
+  <div class="form-group">
+    <label for="exampleInputEmail1">Id</label>
+    <input formControlName="id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Id">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Name</label>
+    <input formControlName="name" type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Name">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword2">Address</label>
+    <input formControlName="address" type="text" class="form-control" id="exampleInputPassword2" placeholder="Enter Address">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword3">Age</label>
+    <input formControlName="age" type="text" class="form-control" id="exampleInputPassword3" placeholder="Enter Age">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword4">Mark</label>
+    <input formControlName="mark" type="text" class="form-control" id="exampleInputPassword4" placeholder="Enter Mark">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Image</label>
+  </div>
+  <button type="submit" class="btn btn-primary" >Submit</button>
+</form>

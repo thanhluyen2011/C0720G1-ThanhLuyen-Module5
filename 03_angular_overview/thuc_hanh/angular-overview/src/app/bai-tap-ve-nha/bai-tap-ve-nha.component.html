@@ -1,5 +1,6 @@
 <h1 style="color: red;text-align: center">List Student</h1>
-<table class="table table-hover table-striped text-warning"  >
+<button class="btn btn-info" data-toggle="modal" data-target="#createStudent">Create Student</button>
+<table class="table table-hover table-striped text-warning">
   <thead>
   <tr>
     <th>Id</th>
@@ -21,13 +22,22 @@
         <ng-template #else1><span [style.color]="'red'">Fail</span></ng-template>
       </ng-template>
     </td>
-    <td><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="getStudent(student)">Detail</button></td>
+    <td>
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+              (click)="getStudent(student)">Detail
+      </button>
+      <button class="btn btn-outline-danger" data-toggle="modal" data-target="#delete"
+              (click)="removeStudent(student.id)">Delete
+      </button>
+    </td>
   </tr>
+
   </tbody>
 </table>
 
 <!-- Modal -->
-<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -41,11 +51,35 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-<!--        <button type="button" class="btn btn-primary">Save changes</button>-->
+        <!--        <button type="button" class="btn btn-primary">Save changes</button>-->
       </div>
     </div>
   </div>
 </div>
+
+
+<div class="modal fade " id="createStudent" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1"
+     aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Detail</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+      <app-create-student [studentListCreate]="studentList" ></app-create-student>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <!--        <button type="button" class="btn btn-primary">Save changes</button>-->
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
 
