@@ -1,5 +1,5 @@
 <h1 style="color: #0c3f9c;text-align: center">Add new Student</h1>
-<form [formGroup]="studentCreate" (ngSubmit)="saveStudent()" >
+<form  [formGroup]="studentCreate" (ngSubmit)="saveStudent()" >
   <div class="form-group">
     <label for="exampleInputEmail1">Id</label>
     <input formControlName="id" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Id">
@@ -23,5 +23,6 @@
   <div class="form-group">
     <label for="exampleInputPassword1">Image</label>
   </div>
-  <button type="submit" class="btn btn-primary" >Submit</button>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <button class="btn btn-warning" data-dismiss="modal" style="margin: 20px" id="closeModal" routerLink="">Cancel</button>
 </form>

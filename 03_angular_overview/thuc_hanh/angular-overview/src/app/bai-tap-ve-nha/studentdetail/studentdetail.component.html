@@ -1,4 +1,4 @@
-<div *ngIf="studentDetail">
+<div *ngIf="student">
   <table class="table table-striped">
     <thead>
     <tr>
@@ -12,13 +12,12 @@
     </thead>
     <tbody>
     <tr>
-      <th scope="row">{{studentDetail.id}}</th>
-      <td>{{studentDetail.name}}</td>
-      <td>{{studentDetail.address}}</td>
-      <td>{{studentDetail.age}}</td>
-      <td>{{studentDetail.mark}}
-        <input type="number" (change)="setMark($event.target.value)" min="0" max="10"></td>
-      <td><img  data-toggle="modal" data-target="#modalImage" style="width: 50px;height: 50px" [src]="studentDetail.image"></td>
+      <th scope="row">{{student.id}}</th>
+      <td>{{student.name}}</td>
+      <td>{{student.address}}</td>
+      <td>{{student.age}}</td>
+      <td>{{student.mark}}</td>
+      <td><img  data-toggle="modal" data-target="#modalImage" style="width: 50px;height: 50px" [src]="student.image"></td>
       <td></td>
     </tr>
     </tbody>
